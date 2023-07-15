@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('siswas', function (Blueprint $table) {
             $table->id();
-            $table->string('username')->unique();
-            $table->string('email')->nullable()->unique();
-            $table->string('password');
-            $table->enum('role', ['admin', 'guru', 'siswa']);
+            $table->string('nis')->unique();
+            $table->string('kelas');
+            $table->string('nama_ortu')->nullable();
+            $table->string('telepon_ortu')->nullable();
             $table->foreignId('biodata_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('siswas');
     }
 };

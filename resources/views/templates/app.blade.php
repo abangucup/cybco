@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="light-style layout-menu-fixed">
 
 <head>
     <meta charset="utf-8">
@@ -15,19 +15,24 @@
 
             @include('templates.layouts.sidebar')
 
-
             <div class="layout-page">
                 @include('templates.layouts.navbar')
-                @yield('content')
+                <div class="content-wrapper">
 
-                @include('templates.layouts.footer')
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        @yield('content')
+                    </div>
 
-                <div class="content-backdrop fade"></div>
+                    @include('templates.layouts.footer')
+
+                    <div class="content-backdrop fade"></div>
+                </div>
             </div>
 
         </div>
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
+
     @include('templates.layouts.script')
 </body>
 
