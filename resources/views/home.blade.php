@@ -5,12 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title')</title>
+    <title>Home | CYBCO</title>
     @include('auth.partials.style')
 </head>
 
 <body>
+
+
     <div class="container-xxl">
+
+        @include('sweetalert::alert')
 
         <div class="authentication-wrapper authentication-basic container-p-y">
             <div class="authentication-inner">
@@ -75,8 +79,14 @@
                         <h4 class="mb-2">SELAMAT DATANG DI APLIKASI CYBER CONSELING (CYBCO) 👋</h4>
                         <p class="mb-4">Memberikan bimbingan konseling kepada siswa yang bermasalah</p>
 
-
+                        @guest
                         <a href="{{ route('login') }}" class="btn btn-primary d-grid w-100">Jelajahi CYBCO</a>
+                        @endguest
+                        @auth
+                        <a href="{{ $user->role == 'admin' ? route('dashboard.admin') : ($user->role == 'guru' ? route('dashboard.guru') : route('dashboard.siswa')) }}"
+                            class="btn btn-primary w-100"><i
+                                class="menu-icon tf-icons bx bx-tachometer"></i>Dashboard</a>
+                        @endauth
 
                     </div>
                 </div>

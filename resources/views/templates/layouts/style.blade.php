@@ -1,5 +1,6 @@
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
+{{--
+<link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" /> --}}
 
 <!-- Fonts -->
 
@@ -12,6 +13,7 @@
 <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/boxicons.css') }}" />
 
 <!-- Core CSS -->
+
 <link rel="stylesheet" href="{{ asset('assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
 <link rel="stylesheet" href="{{ asset('assets/vendor/css/theme-default.css') }}"
     class="template-customizer-theme-css" />
@@ -24,3 +26,8 @@
 
 <link rel="stylesheet" href="{{ asset('assets/vendor/libs/apex-charts/apex-charts.css') }}" />
 <!-- Page CSS -->
+
+{{-- INI DATA TABLES --}}
+{{--
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"> --}}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">

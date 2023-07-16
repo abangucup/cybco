@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GuruController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,6 +19,10 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::group(['middleware' => ['role:admin'], 'prefix' => 'admin'], function () {
         Route::get('/', [DashboardController::class, 'admin'])->name('dashboard.admin');
+        // CRUD GURU, SISWA, USER
+        Route::resource('/guru', GuruController::class);
+        Route::resource('/siswa', SiswaController::class);
+        Route::resource('/user', UserController::class);
     });
 
     Route::group(['middleware' => ['role:guru'], 'prefix' => 'guru'], function () {

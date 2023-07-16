@@ -5,11 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title')</title>
+    <title>Login | CYBCO</title>
     @include('auth.partials.style')
 </head>
 
 <body>
+
+    @include('sweetalert::alert')
+
     <div class="container-xxl">
 
         <div class="authentication-wrapper authentication-basic container-p-y">

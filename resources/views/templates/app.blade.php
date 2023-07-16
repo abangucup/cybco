@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="light-style layout-menu-fixed">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="light-style layout-menu-fixed"
+    data-assets-path="{{ asset('assets/') }}">
 
 <head>
     <meta charset="utf-8">
@@ -7,16 +8,22 @@
 
     <title>@yield('title')</title>
     @include('templates.layouts.style')
+    @stack('style')
 </head>
 
 <body>
+
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
 
             @include('templates.layouts.sidebar')
 
+            @include('sweetalert::alert')
+
             <div class="layout-page">
+
                 @include('templates.layouts.navbar')
+
                 <div class="content-wrapper">
 
                     <div class="container-xxl flex-grow-1 container-p-y">
@@ -34,6 +41,7 @@
     </div>
 
     @include('templates.layouts.script')
+    @stack('script')
 </body>
 
 </html>

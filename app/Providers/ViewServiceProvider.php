@@ -27,7 +27,7 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer([
-            'admin.dashboard', 'guru.dashboard', 'siswa.dashboard'
+            'home', 'templates.app'
         ], function ($view) {
             $user = Auth::user();
             $view->with('user', $user);

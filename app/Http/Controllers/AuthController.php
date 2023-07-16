@@ -23,13 +23,15 @@ class AuthController extends Controller
         if (Auth::attempt($kredensial)) {
             $role = auth()->user()->role;
             if ($role == 'admin') {
+                Alert::success('Berhasil Login', 'Anda Login Sebagai ' . $role);
                 return redirect()->route('dashboard.admin');
             } elseif ($role == 'guru') {
+                Alert::success('Berhasil Login', 'Anda Login Sebagai ' . $role);
                 return redirect()->route('dashboard.guru');
             } else {
+                Alert::success('Berhasil Login', 'Anda Login Sebagai ' . $role);
                 return redirect()->route('dashboard.siswa');
             }
-            Alert::toast('Berhasil Login Ke Sistem', 'success');
         }
 
         Alert::toast('Username atau Password tidak sesuai', 'error');
