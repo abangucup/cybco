@@ -1,11 +1,11 @@
-<div class="modal fade" id="editGuru-{{ $data->id }}" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="editSiswa-{{ $data->id }}" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel1">Ubah Data Guru</h5>
+                <h5 class="modal-title" id="exampleModalLabel1">Ubah Data Siswa</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ route('guru.update', $data->id) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('siswa.update', $data->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="modal-body">
@@ -18,9 +18,30 @@
                     </div>
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="nuptk" class="form-label">NUPTK / Username</label>
-                            <input type="text" id="nuptk" class="form-control" placeholder="Masukan NUPTK" name="nuptk"
-                                value="{{ $data->nuptk }}" required />
+                            <label for="nik" class="form-label">NIS</label>
+                            <input type="text" id="nik" class="form-control" placeholder="Masukan NIS" name="nis"
+                                value="{{ $data->nis }}" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label for="kelas" class="form-label">Kelas</label>
+                            <input type="text" id="kelas" class="form-control" placeholder="11 (A)" name="kelas"
+                                value="{{ $data->kelas }}" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label for="nama_ortu" class="form-label">Nama Orang Tua</label>
+                            <input type="text" id="nama_ortu" class="form-control" placeholder="Nama Orang Tua"
+                                value="{{ $data->nama_ortu }}" name="nama_ortu" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label for="telepon_ortu" class="form-label">Nomor WA Orang Tua</label>
+                            <input type="number" id="telepon_ortu" class="form-control" placeholder="08xxxxxxx"
+                                value="{{ $data->telepon_ortu }}" name="telepon_ortu" />
                         </div>
                     </div>
                     <div class="row">
@@ -33,8 +54,8 @@
                     <div class="row">
                         <div class="col mb-3">
                             <label for="telepon" class="form-label">Nomor WA Aktif</label>
-                            <input type="text" id="telepon" class="form-control" placeholder="08xxxxxxx" name="telepon"
-                                value="{{ $data->biodata->telepon }}" required />
+                            <input type="number" id="telepon" class="form-control" placeholder="08xxxxxxx"
+                                value="{{ $data->biodata->telepon }}" name="telepon" required />
                         </div>
                     </div>
                     <div class="row">

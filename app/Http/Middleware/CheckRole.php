@@ -19,13 +19,14 @@ class CheckRole
     public function handle(Request $request, Closure $next, $roles)
     {
         if (!Auth::check()) {
-            return route('login');
+            return redirect()->route('login');
         }
 
         if (Auth::user()->role !== $roles) {
             Alert::toast('Role Tidak Sesuai', 'error');
             return back();
         }
+
         return $next($request);
     }
 }

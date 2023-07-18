@@ -10,12 +10,13 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Str;
 
 class GuruController extends Controller
 {
     public function index()
     {
-        $guru = Guru::paginate();
+        $guru = Guru::paginate(10);
         return view('admin.guru.index', compact('guru'));
     }
 
@@ -31,7 +32,7 @@ class GuruController extends Controller
         $biodata->nama = $request->nama;
         $biodata->telepon = $request->telepon;
         $biodata->alamat = $request->alamat;
-        if ($request->has('foto')) {
+        if ($request->file('foto')) {
             $foto = $request->file('foto');
             $fotoName = time() . '.' . $foto->getClientOriginalExtension();
 
@@ -59,11 +60,6 @@ class GuruController extends Controller
 
     public function update(Request $request, $id)
     {
-        // $this->validate($request, [
-        //     'nama' => 'required',
-        //     'nuptk' => 'required|unique:gurus',
-        //     'telepon' => 'required',
-        // ]);
         $validasi = Validator::make($request->all(), [
             'nama' => 'required',
             'nuptk' => 'required|unique:gurus',
@@ -85,6 +81,19 @@ class GuruController extends Controller
             'telepon' => $request->telepon,
             'alamat' => $request->alamat,
         ]);
+        if ($request->file('foto')) {
+            // Hapus foto lama
+            Storage::disk('public')->delete(Str::after($guru->biodata->foto, 'storage/'));
+
+            // Upload foto baru
+            $foto = $request->file('foto');
+            $fotoName = time() . '.' . $foto->getClientOriginalExtension();
+            $path = $foto->storeAs('public/gambar', $fotoName);
+            $url = Storage::url($path);
+            $guru->biodata->update([
+                'foto' => $url,
+            ]);
+        }
 
         $guru->update([
             'nuptk' => $request->nuptk,
@@ -103,6 +112,8 @@ class GuruController extends Controller
     public function destroy(Guru $guru)
     {
         $guru->biodata->delete();
+        Storage::disk('public')->delete(Str::after($guru->biodata->foto, 'storage/'));
+
         Alert::success('Hapus Data Guru', 'Guru ' . $guru->biodata->nama . ' berhasil dihapus');
         return back();
     }

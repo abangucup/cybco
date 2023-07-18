@@ -65,6 +65,7 @@
             </a>
         </li>
 
+        {{-- LEVEL ADMIN --}}
         @if ($user->role == 'admin')
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Data</span>
@@ -89,14 +90,28 @@
         </li>
 
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Permasalahan</span>
+            <span class="menu-header-text">Proses CYBCO</span>
         </li>
 
-        <li class="menu-item {{ Request::is('*/guru') ? 'active' : '' }}">
-            <a href="{{ route('guru.index') }}" class="menu-link">
+        <li class="menu-item {{ Request::is('*/pertanyaan') ? 'active' : '' }}">
+            <a href="{{ route('pertanyaan.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user-check"></i>
-                <div data-i18n="Analytics">Guru</div>
+                <div data-i18n="Analytics">Pertanyaan</div>
             </a>
+        </li>
+        <li class="menu-item {{ Request::is('*/kuisioner') ? 'active' : '' }}">
+            <a href="{{ route('kuisioner.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-smile"></i>
+                <div data-i18n="Analytics">Kuisioner Siswa</div>
+            </a>
+        </li>
+        @endif
+        {{-- END LEVEL ADMIN --}}
+
+        {{-- LEVEL GURU --}}
+        @if ($user->role == 'guru')
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Data</span>
         </li>
         <li class="menu-item {{ Request::is('*/siswa') ? 'active' : '' }}">
             <a href="{{ route('siswa.index') }}" class="menu-link">
@@ -110,7 +125,63 @@
                 <div data-i18n="Analytics">User</div>
             </a>
         </li>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Proses CYBCO</span>
+        </li>
+
+        <li class="menu-item {{ Request::is('*/pertanyaan') ? 'active' : '' }}">
+            <a href="{{ route('pertanyaan.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user-check"></i>
+                <div data-i18n="Analytics">Pertanyaan</div>
+            </a>
+        </li>
+        <li class="menu-item {{ Request::is('*/kuisioner') ? 'active' : '' }}">
+            <a href="{{ route('kuisioner.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-smile"></i>
+                <div data-i18n="Analytics">Kuisioner Siswa</div>
+            </a>
+        </li>
+        <li class="menu-item {{ Request::is('*/jadwal') ? 'active' : '' }}">
+            <a href="{{ route('jadwal.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-smile"></i>
+                <div data-i18n="Analytics">Jadwal Konseling</div>
+            </a>
+        </li>
+        <li class="menu-item {{ Request::is('*/riwayat') ? 'active' : '' }}">
+            <a href="{{ route('riwayat.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-smile"></i>
+                <div data-i18n="Analytics">Riwayat Konseling</div>
+            </a>
+        </li>
         @endif
+        {{-- END LEVEL GURU --}}
+
+        {{-- LEVEL SISWA --}}
+        @if ($user->role == 'siswa')
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Proses CYBCO</span>
+        </li>
+        <li class="menu-item {{ Request::is('*/kuisioner') ? 'active' : '' }}">
+            <a href="{{ route('kuisioner.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-smile"></i>
+                <div data-i18n="Analytics">Kuisioner Siswa</div>
+            </a>
+        </li>
+        <li class="menu-item {{ Request::is('*/jadwal') ? 'active' : '' }}">
+            <a href="{{ route('jadwal_siswa') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-smile"></i>
+                <div data-i18n="Analytics">Jadwal Konseling</div>
+            </a>
+        </li>
+        <li class="menu-item {{ Request::is('*/riwayat') ? 'active' : '' }}">
+            <a href="{{ route('riwayat_siswa') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user-check"></i>
+                <div data-i18n="Analytics">Konsultasi</div>
+            </a>
+        </li>
+        @endif
+        {{-- END LEVEL SISWA --}}
 
     </ul>
 </aside>
