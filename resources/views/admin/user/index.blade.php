@@ -13,6 +13,10 @@
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahUser">Tambah User</button>
     </div>
 
+    {{-- MODAL TAMBAH --}}
+    @include('admin.user.modal_tambah')
+    {{-- END MODAL TAMBAH --}}
+
     <div class="table-responsive">
         <table class="table myTable">
             <thead class="text-center">
@@ -33,13 +37,24 @@
                     <td>{{ $data->biodata->nama }}</td>
                     <td>{{ $data->username }}</td>
                     <td>{{ $data->email ?? 'Kosong'}}</td>
-                    <td>{{ $data->telepon ?? 'Kosong'}}</td>
+                    <td>{{ $data->biodata->telepon ?? 'Kosong'}}</td>
                     <td>{{ $data->role }}</td>
                     <td class="text-nowrap">
-                        <a href="" class="btn btn-danger">Hapus</a>
-                        <a href="" class="btn btn-warning">Edit</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#hapusUser-{{ $data->id }}"
+                            class="btn btn-danger">Hapus</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#ubahUser-{{ $data->id }}"
+                            class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
+
+                {{-- MODAL UBAH USER --}}
+                @include('admin.user.modal_ubah')
+                {{-- END UBAH USER --}}
+
+                {{-- MODAL HAPUS USER --}}
+                @include('admin.user.modal_hapus')
+                {{-- END HAPUS USER --}}
+
                 @endforeach
             </tbody>
         </table>
@@ -49,3 +64,22 @@
     </div>
 </div>
 @endsection
+
+@push('script')
+<script>
+    $(document).ready(function() {
+            $('.togglePassword').click(function() {
+                const passwordInput = $('.password');
+                const passwordFieldType = passwordInput.attr('type');
+
+                if (passwordFieldType === 'password') {
+                    passwordInput.attr('type', 'text');
+                    $('.togglePassword i').removeClass('bx-hide').addClass('bx-show');
+                } else {
+                    passwordInput.attr('type', 'password');
+                    $('.togglePassword i').removeClass('bx-show').addClass('bx-hide');
+                }
+            });
+        });
+</script>
+@endpush

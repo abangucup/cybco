@@ -37,7 +37,7 @@
                                     placeholder="Masukan username (NIS / NUPTK)" autofocus required />
                             </div>
                             <div class="mb-3 form-password-toggle">
-                                <label for="username" class="form-label">Password</label>
+                                <label for="password" class="form-label">Password</label>
                                 <div class="input-group input-group-merge">
                                     <input type="password" id="password" class="form-control" name="password"
                                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"

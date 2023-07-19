@@ -95,13 +95,13 @@
 
         <li class="menu-item {{ Request::is('*/pertanyaan') ? 'active' : '' }}">
             <a href="{{ route('pertanyaan.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-user-check"></i>
+                <i class="menu-icon tf-icons bx bx-question-mark"></i>
                 <div data-i18n="Analytics">Pertanyaan</div>
             </a>
         </li>
         <li class="menu-item {{ Request::is('*/kuisioner') ? 'active' : '' }}">
             <a href="{{ route('kuisioner.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-smile"></i>
+                <i class="menu-icon tf-icons bx bx-data"></i>
                 <div data-i18n="Analytics">Kuisioner Siswa</div>
             </a>
         </li>
@@ -132,25 +132,25 @@
 
         <li class="menu-item {{ Request::is('*/pertanyaan') ? 'active' : '' }}">
             <a href="{{ route('pertanyaan.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-user-check"></i>
+                <i class="menu-icon tf-icons bx bx-question-mark"></i>
                 <div data-i18n="Analytics">Pertanyaan</div>
             </a>
         </li>
         <li class="menu-item {{ Request::is('*/kuisioner') ? 'active' : '' }}">
             <a href="{{ route('kuisioner.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-smile"></i>
+                <i class="menu-icon tf-icons bx bx-data"></i>
                 <div data-i18n="Analytics">Kuisioner Siswa</div>
             </a>
         </li>
         <li class="menu-item {{ Request::is('*/jadwal') ? 'active' : '' }}">
             <a href="{{ route('jadwal.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-smile"></i>
+                <i class="menu-icon tf-icons bx bx-calendar-event"></i>
                 <div data-i18n="Analytics">Jadwal Konseling</div>
             </a>
         </li>
         <li class="menu-item {{ Request::is('*/riwayat') ? 'active' : '' }}">
             <a href="{{ route('riwayat.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-smile"></i>
+                <i class="menu-icon tf-icons bx bx-history"></i>
                 <div data-i18n="Analytics">Riwayat Konseling</div>
             </a>
         </li>
