@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('kuisioners', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('siswa_id')->constrained()->onDelete('cascade');
+            $table->foreignId('pertanyaan_id')->constrained()->onDelete('cascade');
+            $table->enum('jawaban', ['ya', 'tidak']);
             $table->timestamps();
         });
     }

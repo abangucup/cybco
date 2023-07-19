@@ -21,4 +21,9 @@ class Siswa extends Model
     {
         return $this->belongsTo(Biodata::class);
     }
+
+    public function kuisioner()
+    {
+        return $this->hasMany(Kuisioner::class);
+    }
 }
