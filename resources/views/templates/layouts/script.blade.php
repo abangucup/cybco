@@ -30,5 +30,6 @@
             paging: false,
             info: false,
         });
+        $('#modalOrtu').modal('show');
     });
 </script>

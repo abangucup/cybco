@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('jadwals', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('guru_id')->constrained()->onDelete('cascade');
+            $table->foreignId('siswa_id')->constrained()->onDelete('cascade');
+            $table->date('tanggal_konseling');
+            $table->time('jam_konseling');
+            $table->text('keterangan');
+            $table->enum('status', ['menunggu', 'berlangsung', 'selesai'])->default('menunggu');
             $table->timestamps();
         });
     }

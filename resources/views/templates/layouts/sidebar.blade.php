@@ -162,21 +162,21 @@
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Proses CYBCO</span>
         </li>
-        <li class="menu-item {{ Request::is('*/kuisioner') ? 'active' : '' }}">
-            <a href="{{ route('kuisioner.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-smile"></i>
-                <div data-i18n="Analytics">Kuisioner Siswa</div>
+        <li class="menu-item {{ Request::is('*/kuisioner/*') ? 'active' : '' }}">
+            <a href="{{ route('kuisioner.create') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-data"></i>
+                <div data-i18n="Analytics">Kuisioner Saya</div>
             </a>
         </li>
         <li class="menu-item {{ Request::is('*/jadwal') ? 'active' : '' }}">
             <a href="{{ route('jadwal_siswa') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-smile"></i>
-                <div data-i18n="Analytics">Jadwal Konseling</div>
+                <i class="menu-icon tf-icons bx bx-calendar-event"></i>
+                <div data-i18n="Analytics">Jadwal Saya</div>
             </a>
         </li>
         <li class="menu-item {{ Request::is('*/riwayat') ? 'active' : '' }}">
             <a href="{{ route('riwayat_siswa') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-user-check"></i>
+                <i class="menu-icon tf-icons bx bx-message-square-dots"></i>
                 <div data-i18n="Analytics">Konsultasi</div>
             </a>
         </li>

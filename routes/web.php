@@ -6,6 +6,7 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KuisionerController;
 use App\Http\Controllers\PertanyaanController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\UserController;
@@ -60,6 +61,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/jadwal', [JadwalController::class, 'jadwalSiswa'])->name('jadwal_siswa');
         Route::get('/riwayat', [RiwayatController::class, 'riwayatSiswa'])->name('riwayat_siswa');
     });
+
+    // PROFILE
+    Route::post('/profile/ortu', [ProfileController::class, 'updateOrtu'])->name('profile.ortu');
+    Route::resource('/profile', ProfileController::class);
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });

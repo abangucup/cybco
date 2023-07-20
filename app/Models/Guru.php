@@ -18,4 +18,9 @@ class Guru extends Model
     {
         return $this->belongsTo(Biodata::class);
     }
+
+    public function jadwal()
+    {
+        return $this->hasMany(Jadwal::class);
+    }
 }

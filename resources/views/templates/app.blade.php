@@ -27,6 +27,16 @@
                 <div class="content-wrapper">
 
                     <div class="container-xxl flex-grow-1 container-p-y">
+                        {{-- CEK NOMOR ORANG TUA SISWA --}}
+                        @if ($user->role == 'siswa')
+
+                        @if ($user->biodata->siswa->telepon_ortu == null)
+                        @include('templates.modal.modal_nomor_ortu')
+                        @endif
+
+                        @endif
+                        {{-- END CEK NOMOR ORANG TUA --}}
+
                         @yield('content')
                     </div>
 

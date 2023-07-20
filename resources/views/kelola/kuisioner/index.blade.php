@@ -59,7 +59,7 @@
                         <th rowspan="2" style="width: 5%">No</th>
                         <th rowspan="2" style="width: 50%">Nama Siswa</th>
                         <th colspan="2" style="width: 20%">Jumlah Jawaban</th>
-                        <th rowspan="2" style="width: 10%">Keterangan</th>
+                        <th rowspan="2" style="width: 20%">Keterangan</th>
                     </tr>
                     <tr>
                         <th>Yes</th>

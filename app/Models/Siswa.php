@@ -26,4 +26,9 @@ class Siswa extends Model
     {
         return $this->hasMany(Kuisioner::class);
     }
+
+    public function jadwal()
+    {
+        return $this->hasMany(Jadwal::class);
+    }
 }
