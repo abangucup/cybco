@@ -74,12 +74,14 @@
                     $persen = ($totalYa / $jumlahKuis) * 100;
                     }
                     @endphp
-                    <tr>
+                    <tr class="{{ $persen > 50/100 ? 'text-white bg-danger' : 'text-white bg-info' }}">
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $siswa->biodata->nama }}</td>
                         <td>{{ $siswa->kuisioner()->where('jawaban', 'ya')->count() ?? 0 }}</td>
                         <td>{{ $siswa->kuisioner()->where('jawaban', 'tidak')->count() ?? 0 }}</td>
-                        <td>{{ $persen > 50 ? 'Bermasalah' : 'Baik-baik saja'}}</td>
+                        <td>{{ $persen > 50/100 ?
+                            'Bermasalah' :
+                            'Baik-baik saja'}}</td>
                     </tr>
                     @endforeach
                 </tbody>

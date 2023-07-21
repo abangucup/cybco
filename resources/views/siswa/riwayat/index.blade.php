@@ -1,0 +1,56 @@
+@extends('templates.app')
+
+@section('title', 'Riwayat Konseling')
+
+@section('content')
+<h4 class="fw-bold"><a class="text-muted fw-light" href="{{ route('dashboard.admin') }}">Dashboard /</a> Siswa
+</h4>
+<span class="fw-bold">List semua data siswa</span>
+
+<div class="card mt-4">
+    <div class="card-body">
+        <div class="table-responsive  text-nowrap">
+            <table class="table table-bordered myTable">
+                <thead class="text-center">
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Siswa</th>
+                        <th>NIS</th>
+                        <th>Kelas</th>
+                        <th>Alamat</th>
+                        <th>Telepon</th>
+                        <th>Nama Ortu</th>
+                        <th>Nomor Telp. Ortu</th>
+                        <th>Opsi</th>
+                    </tr>
+                </thead>
+                <tbody class="table-border-bottom-0 text-center">
+                    {{-- @foreach ($siswa as $data)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $data->biodata->nama }}</td>
+                        <td>{{ $data->nis }}</td>
+                        <td>{{ $data->kelas }}</td>
+                        <td>{{ $data->biodata->alamat ?? 'Kosong'}}</td>
+                        <td>{{ $data->biodata->telepon ?? 'Kosong'}}</td>
+                        <td>{{ $data->nama_ortu ?? 'Kosong'}}</td>
+                        <td>{{ $data->telepon_ortu ?? 'Kosong' }}</td>
+                        <td class="text-nowrap">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#hapusSiswa-{{ $data->id }}"
+                                class="btn btn-danger"><i class="menu-icon tf-icons bx bx-trash"></i></a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#editSiswa-{{ $data->id }}"
+                                class="btn btn-warning"><i class="menu-icon tf-icons bx bx-edit"></i></a>
+                        </td>
+                    </tr>
+
+                    @endforeach --}}
+                </tbody>
+            </table>
+            <div class="p-4">
+                {{-- {{ $siswa->links() }} --}}
+            </div>
+
+        </div>
+    </div>
+</div>
+@endsection

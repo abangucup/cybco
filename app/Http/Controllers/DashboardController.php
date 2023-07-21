@@ -43,4 +43,11 @@ class DashboardController extends Controller
         $jumlahGuru = Guru::count();
         return view('siswa.dashboard', compact('jumlahJadwal', 'jumlahGuru'));
     }
+
+    // TAMABAHAN UNTUK SISWA
+    public function konsultasi()
+    {
+        $gurus = Guru::paginate(5);
+        return view('siswa.konsultasi.index', compact('gurus'));
+    }
 }

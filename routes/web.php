@@ -59,6 +59,11 @@ Route::middleware(['auth'])->group(function () {
 
         // SISWA HANYA DAPAT MELIHAT JADWAL DAN RIWAYATNYA YANG DIBUAT OLEH GURU
         Route::get('/jadwal', [JadwalController::class, 'jadwalSiswa'])->name('jadwal_siswa');
+
+        // KONSULTASI LANGSUNG KEPADA GURU
+        Route::get('/konsultasi', [DashboardController::class, 'konsultasi'])->name('konsultasi');
+
+        // RIWAYAT KONSULTASI
         Route::get('/riwayat', [RiwayatController::class, 'riwayatSiswa'])->name('riwayat_siswa');
     });
 

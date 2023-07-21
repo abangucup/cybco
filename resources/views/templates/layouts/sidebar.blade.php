@@ -174,10 +174,16 @@
                 <div data-i18n="Analytics">Jadwal Saya</div>
             </a>
         </li>
+        <li class="menu-item {{ Request::is('*/konsultasi') ? 'active' : '' }}">
+            <a href="{{ route('konsultasi') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-message-square-dots"></i>
+                <div data-i18n="Analytics">Konsultasi Langsung</div>
+            </a>
+        </li>
         <li class="menu-item {{ Request::is('*/riwayat') ? 'active' : '' }}">
             <a href="{{ route('riwayat_siswa') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-message-square-dots"></i>
-                <div data-i18n="Analytics">Konsultasi</div>
+                <i class="menu-icon tf-icons bx bx-history"></i>
+                <div data-i18n="Analytics">Riwayat Konseling</div>
             </a>
         </li>
         @endif
