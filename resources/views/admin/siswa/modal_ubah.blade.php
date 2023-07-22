@@ -32,20 +32,6 @@
                     </div>
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="nama_ortu" class="form-label">Nama Orang Tua</label>
-                            <input type="text" id="nama_ortu" class="form-control" placeholder="Nama Orang Tua"
-                                value="{{ $data->nama_ortu }}" name="nama_ortu" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col mb-3">
-                            <label for="telepon_ortu" class="form-label">Nomor WA Orang Tua</label>
-                            <input type="number" id="telepon_ortu" class="form-control" placeholder="08xxxxxxx"
-                                value="{{ $data->telepon_ortu }}" name="telepon_ortu" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
                             <input type="text" id="alamat" class="form-control" placeholder="Alamat Lengkap (jika ada)"
                                 value="{{ $data->biodata->alamat }}" name="alamat" />
@@ -54,8 +40,28 @@
                     <div class="row">
                         <div class="col mb-3">
                             <label for="telepon" class="form-label">Nomor WA Aktif</label>
-                            <input type="number" id="telepon" class="form-control" placeholder="08xxxxxxx"
-                                value="{{ $data->biodata->telepon }}" name="telepon" required />
+                            <div class="input-group">
+                                <span class="input-group-text">+62</span>
+                                <input type="text" id="telepon" class="form-control" placeholder="821xxxxxxx"
+                                    value="{{ $data->biodata->telepon }}" name="telepon" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label for="nama_ortu" class="form-label">Nama Orang Tua</label>
+                            <input type="text" id="nama_ortu" class="form-control" placeholder="Nama Orang Tua"
+                                value="{{ $data->nama_ortu }}" name="nama_ortu" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label for="telepon_ortu" class="form-label">Nomor WA Orang Tua</label>
+                            <div class="input-group">
+                                <span class="input-group-text">+62</span>
+                                <input type="text" id="telepon_ortu" class="form-control" placeholder="821xxxxx"
+                                    value="{{ $data->telepon_ortu }}" name="telepon_ortu" />
+                            </div>
                         </div>
                     </div>
                     <div class="row">

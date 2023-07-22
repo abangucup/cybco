@@ -20,21 +20,21 @@ class BiodataSeeder extends Seeder
             [
                 'nama' => 'Winang',
                 'alamat' => 'Bandung',
-                'telepon' => '08814595526',
+                'telepon' => '628814595526',
             ],
 
             // contoh biodata guru
             [
                 'nama' => 'Salman Mustapa',
                 'alamat' => 'Gorontalo',
-                'telepon' => '082154488769',
+                'telepon' => '6285299116574',
             ],
 
             // contoh biodata siswa
             [
                 'nama' => 'Adik Winang',
                 'alamat' => 'Bandung',
-                'telepon' => '08814595526',
+                'telepon' => '628814595526',
             ],
 
         ];

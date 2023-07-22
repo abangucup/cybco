@@ -36,7 +36,7 @@
                         <td>{{ $data->biodata->nama }}</td>
                         <td>{{ $data->username }}</td>
                         <td>{{ $data->email ?? 'Kosong'}}</td>
-                        <td>{{ $data->biodata->telepon ?? 'Kosong'}}</td>
+                        <td>+{{ $data->biodata->telepon ?? 'Kosong'}}</td>
                         <td>{{ $data->role }}</td>
                         <td class="text-nowrap">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#hapusUser-{{ $data->id }}"

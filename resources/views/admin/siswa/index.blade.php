@@ -42,9 +42,9 @@
                         <td>{{ $data->nis }}</td>
                         <td>{{ $data->kelas }}</td>
                         <td>{{ $data->biodata->alamat ?? 'Kosong'}}</td>
-                        <td>{{ $data->biodata->telepon ?? 'Kosong'}}</td>
+                        <td>+{{ $data->biodata->telepon ?? 'Kosong'}}</td>
                         <td>{{ $data->nama_ortu ?? 'Kosong'}}</td>
-                        <td>{{ $data->telepon_ortu ?? 'Kosong' }}</td>
+                        <td>+{{ $data->telepon_ortu ?? 'Kosong' }}</td>
                         <td class="text-nowrap">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#hapusSiswa-{{ $data->id }}"
                                 class="btn btn-danger"><i class="menu-icon tf-icons bx bx-trash"></i></a>

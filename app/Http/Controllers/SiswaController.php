@@ -37,7 +37,7 @@ class SiswaController extends Controller
         $biodata = new Biodata();
         $biodata->nama = $request->nama;
         $biodata->alamat = $request->alamat;
-        $biodata->telepon = $request->telepon;
+        $biodata->telepon = '62' . $request->telepon;
 
         if ($request->file('foto')) {
             $foto = $request->file('foto');
@@ -54,7 +54,7 @@ class SiswaController extends Controller
         $siswa->nis = $request->nis;
         $siswa->kelas = $request->kelas;
         $siswa->nama_ortu = $request->nama_ortu;
-        $siswa->telepon_ortu = $request->telepon_ortu;
+        $siswa->telepon_ortu = '62' . $request->telepon_ortu;
         $siswa->save();
 
         $user = new User();
@@ -90,7 +90,7 @@ class SiswaController extends Controller
         $siswa->biodata->update([
             'nama' => $request->nama,
             'alamat' => $request->alamat,
-            'telepon' => $request->telepon,
+            'telepon' => '62' . $request->telepon,
         ]);
         if ($request->file('foto')) {
             // Hapus foto lama
@@ -110,7 +110,7 @@ class SiswaController extends Controller
             'nis' => $request->nis,
             'kelas' => $request->kelas,
             'nama_ortu' => $request->nama_ortu,
-            'telepon_ortu' => $request->telepon_ortu,
+            'telepon_ortu' => '62' . $request->telepon_ortu,
         ]);
 
         $siswa->biodata->user->update([

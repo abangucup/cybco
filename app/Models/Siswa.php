@@ -31,4 +31,14 @@ class Siswa extends Model
     {
         return $this->hasMany(Jadwal::class);
     }
+
+    public function riwayat()
+    {
+        return $this->hasManyThrough(Riwayat::class, Jadwal::class);
+    }
+
+    public function user()
+    {
+        return $this->hasOneThrough(User::class, Biodata::class);
+    }
 }

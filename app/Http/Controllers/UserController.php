@@ -39,7 +39,7 @@ class UserController extends Controller
         $biodata = new Biodata();
         $biodata->nama = $request->nama;
         $biodata->alamat = $request->alamat;
-        $biodata->telepon = $request->telepon;
+        $biodata->telepon = '62' . $request->telepon;
         if ($request->file('foto')) {
             $foto = $request->file('foto');
             $fotoName = time() . '.' . $foto->getClientOriginalExtension();
@@ -96,7 +96,7 @@ class UserController extends Controller
         $user->biodata->update([
             'nama' => $request->nama,
             'alamat' => $request->alamat,
-            'telepon' => $request->telepon,
+            'telepon' => '62' . $request->telepon,
         ]);
         if ($request->file('foto')) {
             // Hapus Foto Sebelumnya

@@ -29,6 +29,7 @@
                         <th>Waktu Konseling</th>
                         <th>Telepon</th>
                         <th>Keterangan</th>
+                        <th>Status</th>
                         <th>Opsi</th>
                     </tr>
                 </thead>
@@ -40,8 +41,11 @@
                         <td>{{ $jadwal->siswa->nis }}</td>
                         <td>{{ $jadwal->siswa->kelas }}</td>
                         <td>{{ $jadwal->tanggal_konseling.', Jam '. $jadwal->jam_konseling}}</td>
-                        <td>{{ $jadwal->siswa->biodata->telepon }}</td>
+                        <td>+{{ $jadwal->siswa->biodata->telepon }}</td>
                         <td class="text-wrap">{{ $jadwal->keterangan }}</td>
+                        <td
+                            class="{{ $jadwal->status == 'menunggu' ? 'text-danger' : ($jadwal->status == 'berlangsung' ? 'text-warning' : 'text-success') }}">
+                            {{ $jadwal->status }}</td>
                         <td>
                             <a href="#" class="text-danger" data-bs-toggle="modal"
                                 data-bs-target="#hapusJadwal-{{ $jadwal->id }}" data-bs-offset="0,4"

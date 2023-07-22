@@ -26,10 +26,12 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $guru->biodata->nama }}</td>
                         <td>{{ $guru->nuptk }}</td>
-                        <td>{{ $guru->biodata->telepon }}</td>
-                        <td><a href=""><i class="menu-icon tf-icons bx bx-message-square-dots"></i> Chat WhatsApp</a>
+                        <td>+{{ $guru->biodata->telepon }}</td>
+                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#chatGuru-{{ $guru->id }}"><i
+                                    class="menu-icon tf-icons bx bx-message-square-dots"></i> Chat WhatsApp</a>
                         </td>
                     </tr>
+                    @include('siswa.konsultasi.modal_chat')
                     @endforeach
                 </tbody>
             </table>

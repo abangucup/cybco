@@ -62,6 +62,7 @@ Route::middleware(['auth'])->group(function () {
 
         // KONSULTASI LANGSUNG KEPADA GURU
         Route::get('/konsultasi', [DashboardController::class, 'konsultasi'])->name('konsultasi');
+        Route::post('/konsultasi/whatsapp/{guru}', [DashboardController::class, 'kirimPesan'])->name('chat.whatsapp');
 
         // RIWAYAT KONSULTASI
         Route::get('/riwayat', [RiwayatController::class, 'riwayatSiswa'])->name('riwayat_siswa');

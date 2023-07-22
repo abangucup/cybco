@@ -27,4 +27,9 @@ class Jadwal extends Model
     {
         return $this->belongsTo(Guru::class);
     }
+
+    public function riwayat()
+    {
+        return $this->hasOne(Riwayat::class);
+    }
 }

@@ -19,8 +19,12 @@
                     <div class="row">
                         <div class="col mb-3">
                             <label for="telepon" class="form-label">Nomor WA Aktif</label>
-                            <input type="number" id="telepon" minlength="10" maxlength="13" class="form-control"
-                                value="{{ $data->biodata->telepon }}" placeholder="08xxxxxxx" name="telepon" required />
+                            <div class="input-group">
+                                <span class="input-group-text">+62</span>
+                                <input type="text" id="telepon" minlength="10" maxlength="13" class="form-control"
+                                    value="{{ $data->biodata->telepon }}" placeholder="821xxxxxx" name="telepon"
+                                    required />
+                            </div>
                         </div>
                     </div>
                     <div class="row">

@@ -40,7 +40,7 @@
                         <td>{{ $data->biodata->nama }}</td>
                         <td>{{ $data->nuptk }}</td>
                         <td>{{ $data->biodata->alamat ?? 'Kosong'}}</td>
-                        <td>{{ $data->biodata->telepon ?? 'Kosong'}}</td>
+                        <td>+{{ $data->biodata->telepon ?? 'Kosong'}}</td>
                         <td>{{ $data->biodata->user->username }}</td>
                         <td>{{ $data->biodata->user->email ?? 'Kosong'}}</td>
                         <td>

@@ -30,7 +30,7 @@ class GuruController extends Controller
 
         $biodata = new Biodata();
         $biodata->nama = $request->nama;
-        $biodata->telepon = $request->telepon;
+        $biodata->telepon = '62' . $request->telepon;
         $biodata->alamat = $request->alamat;
         if ($request->file('foto')) {
             $foto = $request->file('foto');
@@ -78,7 +78,7 @@ class GuruController extends Controller
 
         $guru->biodata->update([
             'nama' => $request->nama,
-            'telepon' => $request->telepon,
+            'telepon' => '62' . $request->telepon,
             'alamat' => $request->alamat,
         ]);
         if ($request->file('foto')) {
