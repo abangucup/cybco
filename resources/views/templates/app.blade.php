@@ -30,7 +30,7 @@
                         {{-- CEK NOMOR ORANG TUA SISWA --}}
                         @if ($user->role == 'siswa')
 
-                        @if ($user->biodata->siswa->telepon_ortu == null)
+                        @if ($user->biodata->siswa->telepon_ortu == null || $user->biodata->siswa->nama_ortu == null)
                         @include('templates.modal.modal_nomor_ortu')
                         @endif
 

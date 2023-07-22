@@ -12,7 +12,6 @@ class ProfileController extends Controller
     public function updateOrtu(Request $request)
     {
         $validasi = Validator::make($request->all(), [
-            'nama_ortu' => 'required',
             'telepon_ortu' => 'required',
         ]);
 

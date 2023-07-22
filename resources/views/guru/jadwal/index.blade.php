@@ -55,9 +55,9 @@
                                 data-bs-target="#ubahJadwal-{{ $jadwal->id }}" data-bs-offset="0,4"
                                 data-bs-placement="top" data-bs-html="true" title="Ubah Jadwal"><i
                                     class="menu-icon tf-icons bx bx-edit"></i></a>
-                            <a href="#" class="text-success" data-bs-offset="0,4" data-bs-placement="top"
+                            {{-- <a href="#" class="text-success" data-bs-offset="0,4" data-bs-placement="top"
                                 data-bs-html="true" title="Chat WhatsApp"><i
-                                    class="menu-icon tf-icon bx bx-message-square-dots"></i></a>
+                                    class="menu-icon tf-icon bx bx-message-square-dots"></i></a> --}}
                         </td>
                     </tr>
 

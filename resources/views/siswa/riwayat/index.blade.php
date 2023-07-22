@@ -14,40 +14,26 @@
                 <thead class="text-center">
                     <tr>
                         <th>No</th>
-                        <th>Nama Siswa</th>
-                        <th>NIS</th>
-                        <th>Kelas</th>
-                        <th>Alamat</th>
-                        <th>Telepon</th>
-                        <th>Nama Ortu</th>
-                        <th>Nomor Telp. Ortu</th>
-                        <th>Opsi</th>
+                        <th>Nama Guru</th>
+                        <th>NUPTK</th>
+                        <th>Waktu Konseling</th>
+                        <th>Hasil Konseling</th>
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0 text-center">
-                    {{-- @foreach ($siswa as $data)
+                    @foreach ($riwayats as $riwayat)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $data->biodata->nama }}</td>
-                        <td>{{ $data->nis }}</td>
-                        <td>{{ $data->kelas }}</td>
-                        <td>{{ $data->biodata->alamat ?? 'Kosong'}}</td>
-                        <td>{{ $data->biodata->telepon ?? 'Kosong'}}</td>
-                        <td>{{ $data->nama_ortu ?? 'Kosong'}}</td>
-                        <td>{{ $data->telepon_ortu ?? 'Kosong' }}</td>
-                        <td class="text-nowrap">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#hapusSiswa-{{ $data->id }}"
-                                class="btn btn-danger"><i class="menu-icon tf-icons bx bx-trash"></i></a>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#editSiswa-{{ $data->id }}"
-                                class="btn btn-warning"><i class="menu-icon tf-icons bx bx-edit"></i></a>
-                        </td>
+                        <td>{{ $riwayat->jadwal->guru->biodata->nama }}</td>
+                        <td>{{ $riwayat->jadwal->guru->nuptk }}</td>
+                        <td>{{ $riwayat->jadwal->tanggal_konseling.", Jam ".$riwayat->jadwal->jam_konseling }}</td>
+                        <td>{{ $riwayat->keterangan }}</td>
                     </tr>
-
-                    @endforeach --}}
+                    @endforeach
                 </tbody>
             </table>
             <div class="p-4">
-                {{-- {{ $siswa->links() }} --}}
+                {{ $riwayats->links() }}
             </div>
 
         </div>

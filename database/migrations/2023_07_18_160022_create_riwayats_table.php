@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('riwayats', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('jadwal_id')->constrained();
+            $table->foreignId('jadwal_id')->constrained()->onDelete('cascade');
             $table->text('keterangan');
             $table->timestamps();
         });

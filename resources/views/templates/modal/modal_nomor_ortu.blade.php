@@ -8,6 +8,7 @@
             <form action="{{ route('profile.ortu') }}" method="post">
                 @csrf
                 <div class="modal-body">
+                    @if ($user->biodata->siswa->nama_ortu == null)
                     <div class="row">
                         <div class="col mb-3">
                             <label for="namaOrtu" class="form-label">Nama Orang Tua</label>
@@ -15,6 +16,7 @@
                                 name="nama_ortu" required />
                         </div>
                     </div>
+                    @endif
                     <div class="row">
                         <div class="col mb-3">
                             <label for="teleponOrtu" class="form-label">Telepon Wa Aktif Orang Tua</label>
