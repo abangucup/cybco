@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Biodata;
 use App\Models\Guru;
 use App\Models\Jadwal;
 use App\Models\Siswa;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;

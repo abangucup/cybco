@@ -15,7 +15,7 @@
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
                         <img src="{{ $user->biodata->foto != '' ? asset($user->biodata->foto) : asset('assets/img/profile.svg') }}"
-                            alt class="w-px-40 h-auto rounded-circle" />
+                            alt class="w-px-40 h-auto rounded-circle w-100" />
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -25,7 +25,7 @@
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
                                         <img src="{{ $user->biodata->foto != '' ? asset($user->biodata->foto) : asset('assets/img/profile.svg') }}"
-                                            alt="" class="w-px-40 h-auto rounded-circle" />
+                                            alt="" class="w-px-40 h-auto rounded-circle w-100" />
 
                                     </div>
                                 </div>
@@ -40,7 +40,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{ route('profile.show',$user->id) }}">
                             <i class="bx bx-user me-2"></i>
                             <span class="align-middle">My Profile</span>
                         </a>
