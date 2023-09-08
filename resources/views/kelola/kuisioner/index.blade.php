@@ -24,7 +24,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="bg-danger p-4 rounded text-white">
+                        <div class="p-4 rounded text-danger border shadow">
                             <p>1. Halaman kuisioner ini berisi data terkait dengan siswa yang telah melakukan pengisian
                                 kuisioner pada masing masing akunnya</p>
                             <p>2. Halaman kuisioner ini memuat jumlah jawaban ya dari hasil kuisioner yang telah
@@ -74,7 +74,7 @@
                     $persen = ($totalYa / $jumlahKuis) * 100;
                     }
                     @endphp
-                    <tr class="{{ $persen > 50/100 ? 'text-white bg-danger' : 'text-white bg-info' }}">
+                    <tr class="{{ $persen > 50/100 ? 'text-danger' : 'text-success' }}">
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $siswa->biodata->nama }}</td>
                         <td>{{ $siswa->kuisioner()->where('jawaban', 'ya')->count() ?? 0 }}</td>
