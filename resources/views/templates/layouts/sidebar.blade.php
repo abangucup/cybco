@@ -189,6 +189,7 @@
         @endif
         {{-- END LEVEL SISWA --}}
 
+        @if ($user->role != 'siswa')
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Laporan</span>
         </li>
@@ -198,6 +199,8 @@
                 <div data-i18n="Analytics">Laporan</div>
             </a>
         </li>
+        @endif
+
     </ul>
 </aside>
 <!-- / Menu -->
