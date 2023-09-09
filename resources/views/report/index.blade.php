@@ -37,9 +37,9 @@
 
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $jadwal->siswa->biodata->nama }}</td>
-                        <td>{{ $jadwal->tanggal_konseling.", Jam ".$jadwal->jam_konseling }}</td>
-                        <td class="text-wrap">{{ $jadwal->riwayat->keterangan }}</td>
+                        <td>{{ $jadwal->siswa->biodata->nama ?? ''}}</td>
+                        <td>{{ $jadwal->tanggal_konseling.", Jam ".$jadwal->jam_konseling ?? ''}}</td>
+                        <td class="text-wrap">{{ $jadwal->riwayat->keterangan ?? ''}}</td>
                         <td>
                             <a href="{{ route('unduh.perid', ['id' => $jadwal->id]) }}" target="_blank"><i
                                     class="menu-icon tf-icon bx bx-printer"></i></a>
