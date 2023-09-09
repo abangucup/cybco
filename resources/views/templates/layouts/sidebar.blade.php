@@ -189,6 +189,15 @@
         @endif
         {{-- END LEVEL SISWA --}}
 
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Laporan</span>
+        </li>
+        <li class="menu-item {{ Request::is('laporan/siswa') ? 'active' : '' }}">
+            <a href="{{ route('laporan') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user-check"></i>
+                <div data-i18n="Analytics">Laporan</div>
+            </a>
+        </li>
     </ul>
 </aside>
 <!-- / Menu -->

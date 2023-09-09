@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KuisionerController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RiwayatController;
@@ -71,6 +72,12 @@ Route::middleware(['auth'])->group(function () {
     // PROFILE
     Route::post('/profile/ortu', [ProfileController::class, 'updateOrtu'])->name('profile.ortu');
     Route::resource('/profile', ProfileController::class);
+
+    Route::get('/laporan', [LaporanController::class, 'laporan'])->name('laporan');
+
+    // CETAK
+    Route::get('/unduh/{id}', [LaporanController::class, 'unduhDataById'])->name('unduh.perid');
+    Route::get('/unduh-semua', [LaporanController::class, 'unduhSemuaData'])->name('unduh.semua');
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
