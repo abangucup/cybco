@@ -10,17 +10,11 @@
 <div class="card mt-4">
     <div class="card-header d-flex justify-content-between align-items-center">
         <h5 class="card-title fw-bold">List Laporan</h5>
-        {{-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahRiwayat">Unduh Data</button>
-        --}}
         <a href="{{ route('unduh.semua') }}" class="btn btn-primary">Unduh Semua Data</a>
 
     </div>
 
     <div class="card-body">
-        {{-- MODAL TAMBAH SISWA--}}
-        {{-- @include('guru.riwayat.modal_tambah') --}}
-        {{-- END MODAL TAMBAH --}}
-
         <div class="table-responsive  text-nowrap">
             <table class="table table-bordered myTable">
                 <thead class="text-center">
@@ -49,9 +43,6 @@
                     @endforeach
                 </tbody>
             </table>
-            <div class="p-4">
-                {{-- {{ $jadwals->links() }} --}}
-            </div>
 
         </div>
     </div>
